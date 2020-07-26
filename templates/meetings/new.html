@@ -1,0 +1,23 @@
+{% extends "layout_admin.html" %}
+{% load bootstrap4 %}
+
+
+{% block title %}Create New Meeting{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Plan a new meeting</h1>
+        <form method="post" class="form">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+            <button type="submit" class="btn btn-primary">
+              Submit
+            </button>
+            <button type="submit" class="btn btn-secondary">
+              Cancel
+            </button>
+          {% endbuttons %}
+        </form>
+    </div>
+{% endblock %}
